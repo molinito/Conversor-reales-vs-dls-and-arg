@@ -7,7 +7,7 @@
   height: 100vh;
   width: 100%;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 h1 {
@@ -70,7 +70,7 @@ button:hover {
   align-items: center;
   border: 1px solid #bcbcbc;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 
