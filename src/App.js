@@ -6,12 +6,29 @@ const App = () => {
   const [dollar, setDollar] = useState("");
   const [arg, setArg] = useState("");
 
+
   const convert = () => {
-    const dollarValue = real * 0.19;
-    setDollar(dollarValue.toFixed(0));
-    const argValue = dollarValue * 835 * 1.31;
-    setArg(argValue.toFixed(0));
+    fetch('https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/BRL')
+      .then(response => response.json())
+      .then(data => {
+        const dollarValue = real * data.conversion_rates.USD;
+        setDollar(dollarValue.toFixed(2));
+        fetch('https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/USD')
+          .then(response => response.json())
+          .then(data => {
+            const argValue = dollarValue * data.conversion_rates.ARS * 1.31;
+            setArg(argValue.toFixed(2));
+          });
+      });
   };
+   
+
+ /*  const convert = () => {
+    const dollarValue = real * 0.19;
+    setDollar(dollarValue.toFixed(2));
+    const argValue = dollarValue * 835 * 1.31;
+    setArg(argValue.toFixed(2));
+  }; */
 
   return (
     <div className="container">
@@ -30,7 +47,9 @@ const App = () => {
 
       <div className="dolarhoy">
         <iframe title="Dolar hoy" src="https://dolarhoy.com/i/cotizaciones/dolar-blue"></iframe>
+
       </div>
+      
 
       <div className="footer">
         <p>
@@ -42,4 +61,6 @@ const App = () => {
   );
 };
 
-export default App;
+export default App; 
+
+
