@@ -13,14 +13,14 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         const dollarValue = real * data.conversion_rates.USD;
-        setDollar(dollarValue.toFixed(2));
+        setDollar('$ ' + dollarValue.toFixed(2));
         fetch(
           "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/USD"
         )
           .then((response) => response.json())
           .then((data) => {
             const argValue = dollarValue * data.conversion_rates.ARS * 1.31;
-            setArg(argValue.toFixed(2));
+            setArg('$ ' + argValue.toFixed(2));
           });
       });
   };
