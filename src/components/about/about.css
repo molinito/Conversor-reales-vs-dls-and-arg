@@ -28,3 +28,13 @@
     width: 90%;
   }
 }
+
+@media (max-width: 392px) {
+  .about {
+    height: calc(100vh - 50%);
+    margin-bottom: 80px;
+  }
+  .about-card {
+    width: 95%;
+  }
+}

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer">
         <p>
           {" "}
-          © Todos los Derechos Reservados - Developed by:{" "}
+         Developed by:{" "}
           <a href="https://zingy-puppy-bdd4d4.netlify.app/">Marcelo Saravia</a>
         </p>
         <h6>
