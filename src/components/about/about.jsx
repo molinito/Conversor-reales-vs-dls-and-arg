@@ -28,9 +28,6 @@ const About = () => {
             <strong>Fecha:</strong> Febrero 2024
           </Card.Text>
           <Card.Text>
-            <strong>Licencia:</strong> MIT
-          </Card.Text>
-          <Card.Text>
             <strong>Correo:</strong>
             <a href="mailto:molinito48@gmail.com"> molinito48@gmail.com</a>
           </Card.Text>

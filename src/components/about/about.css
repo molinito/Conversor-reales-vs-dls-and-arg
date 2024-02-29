@@ -29,7 +29,7 @@
   }
 }
 
-@media (max-width: 392px) {
+@media (max-width: 378px) {
   .about {
     height: calc(100vh - 50%);
     margin-bottom: 80px;
