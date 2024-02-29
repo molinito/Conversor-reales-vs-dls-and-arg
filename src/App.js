@@ -1,67 +1,28 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+import Navbar from "./components/navbar/navbar";
+import Home from "./components/home/home";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./components/footer/footer";
+import About from "./components/about/about";
+import Terms from "./components/terms/terms";
+import Donar from "./components/donar/donar";
 
-const App = () => {
-  const [real, setReal] = useState("");
-  const [dollar, setDollar] = useState("");
-  const [arg, setArg] = useState("");
-
-  const convert = () => {
-    fetch(
-      "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/BRL"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const dollarValue = real * data.conversion_rates.USD;
-        setDollar('$ ' + dollarValue.toFixed(2));
-        fetch(
-          "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/USD"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            const argValue = dollarValue * data.conversion_rates.ARS * 1.31;
-            setArg('$ ' + argValue.toFixed(2));
-          });
-      });
-  };
-
+function App() {
   return (
-    <div className="container">
-      <h1>Real to Dollar and Arg Converter</h1>
-      <input
-        type="number"
-        placeholder="Enter Reales"
-        value={real}
-        onChange={(e) => setReal(e.target.value)}
-      />
-      <br />
-      <div className="button">
-        <button onClick={convert}>Convert</button>
-        <button onClick={() => setReal("")}>Reset</button>
-      </div>
-      <p>Dollar: {dollar}</p>
-      <p>Pes.Arg: {arg}</p>
-
-      <div className="dolarhoy">
-        <iframe
-          title="Dolar hoy"
-          src="https://dolarhoy.com/i/cotizaciones/dolar-blue"
-        ></iframe>
-      </div>
-
-      <div className="footer">
-        <p>
-          Developed by:{" "}
-          <a href="zingy-puppy-bdd4d4.netlify.app/">Marcelo Saravia</a>
-        </p>
-      </div>
-      <div>
-        <h3>
-          Powered by: <a href="https://dolarhoy.com/">DolarHoy</a>
-        </h3>
-      </div>
-    </div>
+    <Router>
+      <Navbar />
+      <Outlet />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms-of-service" element={<Terms />} />
+        <Route path="/donar" element={<Donar/>} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-};
+}
+
 
 export default App;
