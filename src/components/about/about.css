@@ -29,7 +29,17 @@
   }
 }
 
-@media (max-width: 378px) {
+@media (max-width: 572px) {
+  .about {
+    height: calc(100vh - 55%);
+  }
+  .about-card {
+    width: 90%;
+  }
+  
+}
+
+@media (max-width: 390px) {
   .about {
     height: calc(100vh - 50%);
     margin-bottom: 80px;

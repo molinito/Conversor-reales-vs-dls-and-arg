@@ -37,6 +37,18 @@
   }
 }
 
+@media (max-width: 572) {
+  .terms {
+    margin-top: 500px;
+    margin-bottom: 600px;
+  }
+
+  .terms-card {
+    width: 90%;
+  }
+
+}
+
 /* Estilos para pantallas de 392px o menos */
 @media (max-width: 392px) {
   .terms {
