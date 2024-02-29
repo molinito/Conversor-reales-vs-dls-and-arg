@@ -1,0 +1,50 @@
+.terms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  margin-top: 450px;
+  margin-bottom: 550px;
+}
+
+.terms-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: var(--color-white);
+  box-shadow: 0 0 10px 0 var(--color-primary);
+  width: 80%;
+  text-align: center;
+}
+.small-text {
+  font-size: large;
+}
+
+/* Estilos para pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .terms {
+    margin-top: 600px;
+    margin-bottom: 700px;
+  }
+
+  .terms-card {
+    width: 90%;
+  }
+}
+
+/* Estilos para pantallas de 392px o menos */
+@media (max-width: 392px) {
+  .terms {
+    margin-top: 1220px;
+    margin-bottom: 1300px;
+  }
+
+  .terms-card {
+    width: 95%;
+  }
+}

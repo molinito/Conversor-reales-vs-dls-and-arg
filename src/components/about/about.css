@@ -1,46 +1,30 @@
-/* crear los estilos para el componente About. Básate en los estilos globales y en el diseño de la página. */
-
 .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: var(--color-white);
+  box-shadow: 0 0 10px 0 var(--color-primary);
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about {
+    height: calc(100vh - 60%);
   }
-  
   .about-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: white;
-    color: var(--color-white);
-    box-shadow: 0 0 10px 0 var(--color-primary);
-    width: 80%;
-    text-align: center;
+    width: 90%;
   }
-
-  @media (max-width: 768px) {
-
-    .about {
-      height: calc(80vh - 60px)
-    }
-    .about-card {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 392px) {
-
-    .about {
-      height: calc(140vh - 100px)
-    }
-    .about-card {
-      width: 100%;
-    
-    }
-  }
-  
-
+}

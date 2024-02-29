@@ -6,31 +6,32 @@ const Home = () => {
   const [dollar, setDollar] = useState("");
   const [arg, setArg] = useState("");
 
-  const convert = () => {
-    fetch(
-      "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/BRL"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const dollarValue = real * data.conversion_rates.USD;
-        setDollar("$ " + dollarValue.toFixed(2));
-        fetch(
-          "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/USD"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            const argValue = dollarValue * data.conversion_rates.ARS * 1.31;
-            setArg("$ " + argValue.toFixed(2));
-          });
-      });
+  const convert = async () => {
+    try {
+      const responseUSD = await fetch(
+        "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/BRL"
+      );
+      const dataUSD = await responseUSD.json();
+      const dollarValue = real * dataUSD.conversion_rates.USD;
+      setDollar("$ " + dollarValue.toFixed(2));
+
+      const responseBlue = await fetch("https://dolarapi.com/v1/dolares/blue");
+
+      const dataBlue = await responseBlue.json();
+      const argValue = dollarValue * dataBlue.venta; // Usa la cotización "venta" del dólar blue
+      setArg("$ " + argValue.toFixed(2));
+    } catch (error) {
+      console.error("Error al obtener las cotizaciones:", error);
+      // Maneja el error apropiadamente, como mostrar un mensaje de error al usuario
+    }
   };
 
   return (
-    <div className="container" >
-      <h1 style={{ color: "#ff7f00" }}>Real a Dolar y Pesos Arg Converter</h1>
+    <div className="container">
+      <h1 style={{ color: "#ff7f00" }}>Real a Dolar y a Pesos Arg Converter</h1>
       <input
         type="number"
-        placeholder="Enter Reales"
+        placeholder="Ingrese Reales"
         value={real}
         onChange={(e) => setReal(e.target.value)}
       />
@@ -47,6 +48,7 @@ const Home = () => {
           title="Dolar hoy"
           src="https://dolarhoy.com/i/cotizaciones/dolar-blue"
         ></iframe>
+        <br />
         <h6>
           Powered by: <a href="https://dolarhoy.com/">DolarHoy</a>
         </h6>
