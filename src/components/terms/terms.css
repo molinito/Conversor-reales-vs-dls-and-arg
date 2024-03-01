@@ -1,62 +1,39 @@
-.terms {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  margin-top: 450px;
-  margin-bottom: 550px;
+/* Estilos para pantallas de 1980px o menos */
+@media (max-width: 1980px){
+  .terms {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+  }
 }
 
-.terms-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  margin: 20px;
-  border-radius: 10px;
-  background-color: white;
-  color: var(--color-white);
-  box-shadow: 0 0 10px 0 var(--color-primary);
-  width: 80%;
-  text-align: center;
-}
-.small-text {
-  font-size: large;
+/* Estilos para pantallas de 1440px o menos */
+@media screen and (max-width: 1440px){
+  .terms {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
 }
 
 /* Estilos para pantallas de 768px o menos */
 @media (max-width: 768px) {
   .terms {
-    margin-top: 600px;
-    margin-bottom: 700px;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
   }
 
   .terms-card {
-    width: 90%;
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 }
 
-@media (max-width: 572) {
-  .terms {
-    margin-top: 500px;
-    margin-bottom: 600px;
-  }
-
-  .terms-card {
-    width: 90%;
-  }
-
-}
-
-/* Estilos para pantallas de 392px o menos */
-@media (max-width: 392px) {
-  .terms {
-    margin-top: 1220px;
-    margin-bottom: 1200px;
-  }
-
-  .terms-card {
-    width: 95%;
-  }
-}
