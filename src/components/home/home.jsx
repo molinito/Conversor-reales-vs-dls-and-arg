@@ -9,7 +9,7 @@ const Home = () => {
   const convert = async () => {
     try {
       const responseUSD = await fetch(
-        "https://v6.exchangerate-api.com/v6/8f4e3211f3e3b1a49b8792c5/latest/BRL"
+        `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_EXCHANGE_API_KEY}/latest/BRL`
       );
       const dataUSD = await responseUSD.json();
       const dollarValue = real * dataUSD.conversion_rates.USD;
@@ -40,6 +40,7 @@ const Home = () => {
         <button onClick={convert}>Convertir</button>
         <button onClick={() => setReal("")}>Resetear</button>
       </div>
+      <br />
       <p>Dollar: {dollar}</p>
       <p>Pes.Arg: {arg}</p>
 
