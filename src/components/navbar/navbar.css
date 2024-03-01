@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: 392px) {
+@media (max-width: 512px) {
   .navbar {
     flex-direction: column !important;
   }

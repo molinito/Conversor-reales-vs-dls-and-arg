@@ -31,7 +31,7 @@ const Donar = () => {
           </Card.Text>
            <Card.Text>
             Tambien puedes hacerlo a mi cuenta de Banco Santander al siguiente alias:
-            <p>aurora.grundi.Donar</p>
+            <p>GRAMO.CARDO.AURORA</p>
             <br />
           </Card.Text>
 

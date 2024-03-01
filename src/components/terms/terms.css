@@ -26,14 +26,14 @@
 @media (max-width: 768px) {
   .terms {
     margin-top: 20px;
-    margin-bottom: 90px;
+    margin-bottom: 95px;
     display: flex;
   }
 
   .terms-card {
     width: 100%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right: 4%;
   }
 }
 

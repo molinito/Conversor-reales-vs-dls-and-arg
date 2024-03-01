@@ -1,3 +1,4 @@
+/*
 .about {
   display: flex;
   justify-content: center;
@@ -18,8 +19,47 @@
   box-shadow: 0 0 10px 0 var(--color-primary);
   width: 80%;
   text-align: center;
+} */
+
+/* Estilos para pantallas de 1980px o menos */
+@media (max-width: 1980px){
+  .about {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+  }
 }
 
+/* Estilos para pantallas de 1440px o menos */
+@media screen and (max-width: 1440px){
+  .about {
+    margin-top: 20px;
+    margin-bottom: 90px;
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+}
+
+/* Estilos para pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .about {
+    margin-top: 10px;
+    margin-bottom: 95px;
+    display: flex;
+  }
+
+  .about-card {
+    width: 100%;
+    
+  }
+}
+
+/*
 @media (max-width: 768px) {
   .about {
     height: calc(100vh - 60%);
@@ -29,9 +69,9 @@
   }
 }
 
-@media (max-width: 572px) {
+@media (max-width: 512px) {
   .about {
-    height: calc(100vh - 55%);
+    height: calc(90vh - 55%);
   }
   .about-card {
     width: 90%;
@@ -47,4 +87,4 @@
   .about-card {
     width: 95%;
   }
-}
+}*/

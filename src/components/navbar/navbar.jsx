@@ -33,7 +33,9 @@ const MyNavbar = () => {
           <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>
             Inicio
           </Nav.Link>
-
+          <Nav.Link as={Link} to="/donar" onClick={() => setExpanded(false)}>
+            Donación
+          </Nav.Link>
           <Nav.Link
             as={Link}
             to="terms-of-service"
@@ -43,9 +45,6 @@ const MyNavbar = () => {
           </Nav.Link>
           <Nav.Link as={Link} to="/about" onClick={() => setExpanded(false)}>
             Acerca
-          </Nav.Link>
-          <Nav.Link as={Link} to="/donar" onClick={() => setExpanded(false)}>
-            Donación
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
