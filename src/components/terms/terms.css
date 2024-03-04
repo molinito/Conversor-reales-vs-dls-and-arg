@@ -1,16 +1,18 @@
-/* Estilos para pantallas de 1980px o menos */
+/* Estilos para pantallas de 1980px o menos 
 @media (max-width: 1980px){
   .terms {
     margin-top: 20px;
     margin-bottom: 90px;
     display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
+  }
+ .terms-card {
     width: 100%;
+    margin-left: 1%;
+    margin-right: 4%;
   }
 }
 
-/* Estilos para pantallas de 1440px o menos */
+/* Estilos para pantallas de 1440px o menos 
 @media screen and (max-width: 1440px){
   .terms {
     margin-top: 20px;
@@ -22,7 +24,7 @@
   
 }
 
-/* Estilos para pantallas de 768px o menos */
+/* Estilos para pantallas de 768px o menos 
 @media (max-width: 768px) {
   .terms {
     margin-top: 20px;
@@ -36,4 +38,67 @@
     margin-right: 4%;
   }
 }
+*/
 
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1024px) {
+  .terms {
+    max-height: calc(100vh - 100px);
+    margin-top: 40px;
+    margin-bottom: 240px;
+  }
+
+  .terms-card {
+    width: 80%;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .small-text {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .terms {
+    max-height: calc(100vh - 100px);
+    margin-top: 40px;
+    margin-bottom: 140px;
+    
+  }
+
+  .terms-card {
+    width: 90%;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .small-text {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767px) {
+  .terms {
+    max-height: calc(100vh - 100px);
+    margin-top: 40px;
+    margin-bottom: 500px;
+  }
+
+  .terms-card {
+    width: 90%;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .small-text {
+    font-size: 12px;
+  }
+}
