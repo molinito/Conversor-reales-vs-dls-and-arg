@@ -87,8 +87,8 @@
 @media (max-width: 767px) {
   .terms {
     max-height: calc(100vh - 100px);
-    margin-top: 35px;
-    margin-bottom: 750px;
+    margin-top: 20px;
+    margin-bottom: 1500px;
   }
 
   .terms-card {
